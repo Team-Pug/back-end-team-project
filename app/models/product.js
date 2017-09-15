@@ -3,13 +3,11 @@
 const mongoose = require('mongoose')
 
 const ProductSchema = new mongoose.Schema({
-  // can change to 'product_name' to match csv file
-  name: {
+  product_name: {
     type: String,
     required: true
   },
-  // can change to 'sku_number' to match csv file
-  number: {
+  sku_number: {
     type: Number,
     required: true
   },
@@ -18,8 +16,14 @@ const ProductSchema = new mongoose.Schema({
     required: true
   },
   quantity: {
-    type: Number,
-    required: true
+    number: {
+      type: Number,
+      required: true
+    },
+    unit: {
+      type: String,
+      required: true
+    }
   },
   _owner: {
     type: mongoose.Schema.Types.ObjectId,

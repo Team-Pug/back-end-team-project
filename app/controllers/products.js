@@ -2,7 +2,7 @@
 
 const controller = require('lib/wiring/controller')
 const models = require('app/models')
-const Product = models.product_name
+const Product = models.product
 
 const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
@@ -12,14 +12,14 @@ const create = {
 
 }
 
+const index = (req, res, next) => {
+
+}
+
 const show = (req, res) => {
   res.json({
     product: req.product.toJSON({ virtuals: true, user: req.user })
   })
-}
-
-const index = {
-
 }
 
 const update = {
@@ -32,8 +32,8 @@ const destroy = {
 
 module.exports = controller({
   create,
-  show,
   index,
+  show,
   update,
   destroy
 }, { before: [

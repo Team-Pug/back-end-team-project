@@ -15,15 +15,13 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  quantity: {
-    number: {
-      type: Number,
-      required: true
-    },
-    unit: {
-      type: String,
-      required: true
-    }
+  quantity_number: {
+    type: Number,
+    required: true
+  },
+  quantity_unit: {
+    type: String,
+    required: true
   },
   _owner: {
     type: mongoose.Schema.Types.ObjectId,

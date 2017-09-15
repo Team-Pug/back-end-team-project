@@ -19,4 +19,4 @@ module.exports = require('lib/wiring/routes')
 
 // all routes created
 // added all routes for testing
-.resources('products')
+.get('/products', 'products#show')

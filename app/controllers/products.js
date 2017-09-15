@@ -8,14 +8,34 @@ const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
 
+const create = {
+
+}
+
 const show = (req, res) => {
   res.json({
     product: req.product.toJSON({ virtuals: true, user: req.user })
   })
 }
 
+const index = {
+
+}
+
+const update = {
+
+}
+
+const destroy = {
+
+}
+
 module.exports = controller({
-  show
+  create,
+  show,
+  index,
+  update,
+  destroy
 }, { before: [
   { method: setUser, only: ['index', 'show'] },
   { method: authenticate, except: ['index', 'show'] },

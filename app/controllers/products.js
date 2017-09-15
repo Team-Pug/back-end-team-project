@@ -13,7 +13,12 @@ const create = {
 }
 
 const index = (req, res, next) => {
-
+  Product.find()
+    .then(products => res.json({
+      products: products.map((product) =>
+        product.toJSON({ virtuals: true }))
+    }))
+    .catch(next)
 }
 
 const show = (req, res) => {

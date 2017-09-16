@@ -8,8 +8,17 @@ const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
 
-const create = {
-
+const create = (req, res, next) => {
+  const product = Object.assign(req.body.product, {
+    _owner: req.user._id
+  })
+  Product.create(product)
+    .then(product =>
+      res.status(201)
+        .json({
+          product: product.toJSON({ virtuals: true, user: req.user })
+        }))
+    .catch(next)
 }
 
 const index = (req, res, next) => {

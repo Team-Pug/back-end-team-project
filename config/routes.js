@@ -21,3 +21,4 @@ module.exports = require('lib/wiring/routes')
 // added all routes for testing
 .get('/products/:id', 'products#show')
 .get('/products', 'products#index')
+.patch('/products/:id', 'products#update')

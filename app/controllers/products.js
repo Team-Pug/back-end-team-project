@@ -27,8 +27,11 @@ const show = (req, res) => {
   })
 }
 
-const update = {
-
+const update = (req, res, next) => {
+  delete req.body._owner
+  req.product.update(req.body.product)
+    .then(() => res.sendStatus(204))
+    .catch(next)
 }
 
 const destroy = {

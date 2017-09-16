@@ -31,8 +31,10 @@ const update = {
 
 }
 
-const destroy = {
-
+const destroy = (req, res, next) => {
+  req.product.remove()
+    .then(() => res.sendStatus(204))
+    .catch(next)
 }
 
 module.exports = controller({

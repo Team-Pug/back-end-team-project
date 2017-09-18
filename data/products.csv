@@ -1,0 +1,22 @@
+product_name,sku_number,department,quantity_number,quantity_unit
+Apples,654321,Produce,5,bushels
+Squash,645876,Produce,2,bushels
+Potatoes,623567,Produce,3,bushels
+Asparagus,623654,Produce,3,boxes
+Broccoli,687667,Produce,3,boxes
+Parsley,632443,Produce,1,box
+Spaghetti,112543,Grocery,100,boxes
+Chicken Noodle Soup Cans,133987,Grocery,10,boxes
+Ramen,176345,Grocery,100,boxes
+Ketchup Bottles,187234,Grocery,8,boxes
+Grey Poupon,187234,Grocery,5,boxes
+Bacon,923654,Meat,9,boxes
+Chicken Breasts,923675,Meat,10,boxes
+Whole Chickens,923876,Meat,30,birds
+Swordfish,911283,Meat,20,fillets
+Sirloin Steaks,933475,Meat,50,steaks
+Whole Milk,276458,Dairy,10,crates
+Skim Milk,243546,Dairy,8,crates
+Eggs,209756,Dairy,20,crates
+Cheddar Cheese,276345,Dairy,3,boxes
+Half and Half,254637,Dairy,5,crates

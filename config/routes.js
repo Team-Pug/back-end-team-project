@@ -18,4 +18,9 @@ module.exports = require('lib/wiring/routes')
 .resources('users', { only: ['index', 'show'] })
 
 // all routes created
-
+// added all routes for testing
+.get('/products/:id', 'products#show')
+.get('/products', 'products#index')
+.post('/products', 'products#create')
+.patch('/products/:id', 'products#update')
+.delete('/products/:id', 'products#destroy')

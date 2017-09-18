@@ -1,6 +1,6 @@
 'use strict'
 
-const debug = require('debug')('express-api-template:users')
+const debug = require('debug')('back-end-team-project:users')
 
 const controller = require('lib/wiring/controller')
 const models = require('app/models')

@@ -44,8 +44,15 @@ const update = (req, res, next) => {
 }
 
 const destroy = (req, res, next) => {
+  // put the requested product into a variable
+  const prod = req.product
+  // delete the product
   req.product.remove()
-    .then(() => res.sendStatus(204))
+  // return a json response with the product data, just like with show
+  res.json({
+    product: prod.toJSON({ virtuals: true, user: req.user })
+  })
+    .then(res.sendStatus(204))
     .catch(next)
 }
 
@@ -58,6 +65,6 @@ module.exports = controller({
 }, { before: [
   { method: setUser, only: ['index', 'show'] },
   { method: authenticate, except: ['index', 'show'] },
-  { method: setModel(Product), only: ['show'] },
-  { method: setModel(Product, { forUser: true }), only: ['update', 'destroy'] }
+  { method: setModel(Product), only: ['show', 'update'] },
+  { method: setModel(Product, { forUser: true }), only: ['destroy'] }
 ] })
